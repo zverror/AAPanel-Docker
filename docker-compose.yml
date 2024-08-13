@@ -14,6 +14,11 @@ services:
     volumes: 
       - website_data:/www/wwwroot
       - website_log:/www/wwwlogs
+    ulimits:
+      nofile:
+        name: nofile
+        hard: 65535
+        soft: 65535
 
 volumes:
   website_data:
